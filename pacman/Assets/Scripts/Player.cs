@@ -29,5 +29,15 @@ public class Player : MonoBehaviour
         {
             movement.SetDirection(Vector2.right);
         }
+
+        //rotação do personagem
+        float angle = Mathf.Atan2(movement.direction.y, movement.direction.x);
+        transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
+    }
+
+    public void ResetState()
+    {
+        movement.Reset();
+        gameObject.SetActive(true);
     }
 }

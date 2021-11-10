@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7426328078684688019}
   - component: {fileID: 4866099261224162322}
   - component: {fileID: 4357360349086212391}
+  - component: {fileID: 7303196669160864809}
   m_Layer: 8
   m_Name: PowerCoin
   m_TagString: Untagged
@@ -109,3 +110,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7303196669160864809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2291334891454569562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c18c3f6754f5d04db2c92cbd2e9a574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 50
+  duration: 10

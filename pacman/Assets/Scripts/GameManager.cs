@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Enemy[] enemies;
+    public int enemyPointsMultiplier=1;
     public Player player;
     public Transform coins;
 
@@ -45,7 +46,13 @@ public class GameManager : MonoBehaviour
     //Fantasma derrotado
     public void EnemyKilled(Enemy enemy)
     {
-        Score(this.score + enemy.points);
+        Score(this.score + (enemy.points * enemyPointsMultiplier));
+        enemyPointsMultiplier++;
+    }
+
+    void ResetEnemyMultiplier()
+    {
+        enemyPointsMultiplier = 1;
     }
 
     //Player derrotado
@@ -62,14 +69,48 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //moedas e powerup
+    public void CoinCatched(Coin coin)
+    {
+        coin.gameObject.SetActive(false);
+        Score(score + coin.points);
+        if(!CoinCount())
+        {
+            player.gameObject.SetActive(false);
+            Invoke("NewLevel", 3.0f);
+        }
+    }
+    
+    public void PowerUpCoinCatched(PowerUpCoin coin)
+    {
+        CoinCatched(coin);
+        CancelInvoke();
+        Invoke("ResetEnemyMultiplier", coin.duration);    
+    }
+
+    //verifica se ainda existem moedas no mapa
+    private bool CoinCount()
+    {
+        foreach(Transform coin in this.coins)
+        {
+            if(coin.gameObject.activeSelf)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     //Reset do player e dos fantasmas
     void ResetLevel()
     {
+        ResetEnemyMultiplier();
+
         for(int i = 0; i < enemies.Length; i++)
         {
-            enemies[i].gameObject.SetActive(true);
+            enemies[i].ResetState();
         }
-        player.gameObject.SetActive(true);
+        player.ResetState();
     }
 
 
