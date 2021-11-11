@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blinky
       objectReference: {fileID: 0}
+    - target: {fileID: 3609419675687673022, guid: 198f1a939a457f441b1a4054ba9a73fb, type: 3}
+      propertyPath: m_Radius
+      value: 0.45
+      objectReference: {fileID: 0}
     - target: {fileID: 6996442351375918350, guid: 198f1a939a457f441b1a4054ba9a73fb, type: 3}
       propertyPath: rigidbody
       value: 

@@ -10,7 +10,7 @@ public class AnimationSprites : MonoBehaviour
     public int frame {get ; private set;}
     public bool loop = true;
 
-    void awake()
+    void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -40,7 +40,7 @@ public class AnimationSprites : MonoBehaviour
         }
     }
 
-    void ResetAnimation()
+    public void ResetAnimation()
     {
         frame = -1;
         Walk();

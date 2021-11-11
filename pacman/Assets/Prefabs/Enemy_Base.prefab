@@ -78,7 +78,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.45
+  m_Radius: 0.4
 --- !u!114 &580972969420131789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +112,8 @@ MonoBehaviour:
   initialDirection: {x: 0, y: 0}
   wallsLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
+  blinky: {fileID: 6835099543546534324, guid: d46b68a9b2f14374d8d41c73edac9760, type: 3}
   startPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &7217995622409466843
 MonoBehaviour:
@@ -140,6 +141,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 8
+  body: {fileID: 6997871284966080913}
+  eyes: {fileID: 731028127760934737}
+  blue: {fileID: 5012946740616107944}
+  white: {fileID: 3469106218068384288}
 --- !u!114 &1450052911889169372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0
+  indoor: {fileID: 0}
+  outdoor: {fileID: 0}
 --- !u!114 &2125537048957580260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,6 +488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5579017990818015389}
   - component: {fileID: 731028127760934737}
+  - component: {fileID: 5187254739526118747}
   m_Layer: 7
   m_Name: Eyes
   m_TagString: Untagged
@@ -553,3 +561,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5187254739526118747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9217718054875292203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb6a2bc83813e845b79c59f7fb0b162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  up: {fileID: 21300000, guid: c998e53b72d50734baaa3b816c5de7c4, type: 3}
+  down: {fileID: 21300000, guid: b66cc29a510101240bb17b3e9931a47b, type: 3}
+  left: {fileID: 21300000, guid: c9d6bd26c2a16b54d8e2adfec57c8ae9, type: 3}
+  right: {fileID: 21300000, guid: 00ae03033d16a4048bec0ee17514c276, type: 3}
